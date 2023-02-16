@@ -8,7 +8,7 @@ function CallApi() {
 
   this.deleteInfomationEmployee = function (id) {
     return axios({
-      url: `http://svcy.myclass.vn/api/QuanLyNhanVienApi/LayThongTinNhanVien?maNhanVien=${id}`,
+      url: `http://svcy.myclass.vn/api/QuanLyNhanVienApi/XoaNhanVien?maSinhVien=${id}`,
       method: "DELETE",
     });
   };
@@ -16,7 +16,22 @@ function CallApi() {
   this.addInformation = function (nv) {
     return axios({
       url: "http://svcy.myclass.vn/api/QuanLyNhanVienApi/ThemNhanVien",
-      method: "POST",
+      method: "post",
+      data: nv,
+    });
+  };
+
+  this.getInformationEmployee = function (id) {
+    return axios({
+      url: `http://svcy.myclass.vn/api/QuanLyNhanVienApi/LayThongTinNhanVien?maNhanVien=${id}`,
+      method: "GET",
+    });
+  };
+
+  this.updateInfo = function (nv) {
+    return axios({
+      url: `http://svcy.myclass.vn/api/QuanLyNhanVienApi/CapNhatThongTinNhanVien?maNhanVien=${nv.maNhanVien}`,
+      method: "PUT",
       data: nv,
     });
   };
