@@ -32,10 +32,10 @@ listInfomationEmployee();
 function renderList(dsnv) {
   var content = "";
   dsnv.forEach((nv) => {
-    var tongLuong = nv.soGioLamTrongThang * 1 * nv.luongCoBan * 1;
+    var tongLuong = nv.heSoChucVu * 1 * nv.luongCoBan * 1;
     var loaiNhanVien = "";
     if (nv.soGioLamTrongThang <= 50) {
-      loaiNhanVien = "Nhân viên kém";
+      loaiNhanVien = "Nhân viên trung bình";
     } else if (nv.soGioLamTrongThang > 50 && nv.soGioLamTrongThang <= 100) {
       loaiNhanVien = "Nhân viên giỏi";
     } else {
